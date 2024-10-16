@@ -35,12 +35,20 @@ To launch the service, ensure that your ROS environment is properly set up and t
 ## Verifying the Node Works as Intended
 
 To verify that the `ik_service` node works as expected, use the service client. When running the client, you should see output similar to the following:
-
+In the service terminal:
+```bash
+Service ready
+The ik_service has been called
+```
+In the client terminal:
 ```bash
 Call to ik_service returned [2] solutions
 solution 0:{ 0.0, -0.785, 1.570, 0.0, 1.570, 0.0 }
 solution 1:{ 0.0, 0.785, 1.570, 0.0, 1.570, 0.0 }
 
+```
+
+## Other documentation 
 You can also visit the following repositories for more resources:
 
     cwru_ariac_2019: https://github.com/cwru-courses/cwru_ariac_2019
