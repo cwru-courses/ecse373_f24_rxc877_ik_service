@@ -1,0 +1,8 @@
+# Solicitud del servicio
+geometry_msgs/Pose target_pose
+
+---
+# Respuesta del servicio
+int8 num_solutions
+ik_service/JointSolutions[8] joint_solutions
+
