@@ -1,0 +1,9 @@
+<launch>
+  <!-- Run the service node  -->
+  <node pkg="ik_service" type="ik_service" name="ik_service_node" output="screen" required="true" />
+
+  <!-- Wait till the service is able before running the client -->
+  <node pkg="ik_service" type="ik_client" name="ik_client_node" output="screen">
+    <param name="wait_for_service" type="string" value="/calculate_ik" />
+  </node>
+</launch>
