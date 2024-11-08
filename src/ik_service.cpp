@@ -9,7 +9,7 @@ bool calculateIK(ik_service::PoseIK::Request &req, ik_service::PoseIK::Response 
     double q6_des = 0.0; // Valor deseado para la última articulación
     
 
-    //Convierte la geometría de Pose a un 4x4 matrix T
+    //Convert the pose in a 4x4 matrix T
     double T[4][4] = { {0, -1, 0, req.target_pose.position.x},
                        {0, 0, 1, req.target_pose.position.y},
                        {-1, 0, 0, req.target_pose.position.z},
@@ -19,7 +19,7 @@ bool calculateIK(ik_service::PoseIK::Request &req, ik_service::PoseIK::Response 
 //                        {-1, 0, 0, 0.5},
 //                        {0, 0, 0, 1} };
 
-    // Llama a la función inversa
+    // Calling the inverse pose
     if (ur_kinematics::inverse(&T[0][0], &q_sols[0][0], q6_des)) {
         res.num_solutions = ur_kinematics::inverse(&T[0][0], &q_sols[0][0], 0.0); // Asumiendo que siempre habrá una solución
         for (int i = 0; i < res.num_solutions; ++i) {
