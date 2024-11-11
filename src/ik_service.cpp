@@ -6,8 +6,8 @@
 bool calculateIK(ik_service::PoseIK::Request &req, ik_service::PoseIK::Response &res) {
     ROS_INFO("The ik_service has been called");
 
-  //  double q_sols[8][6]; // Array para los ángulos de las articulaciones
-  //  double q6_des = 0.0; // Valor deseado para la última articulación
+    double q_sols[8][6]; // Array para los ángulos de las articulaciones
+    double q6_des = 0.0; // Valor deseado para la última articulación
 
 //CHANGES FOR THE LAB 5
   // Convert the entry pose to  tf2::Transform to manipulate th eorientation
