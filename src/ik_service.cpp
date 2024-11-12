@@ -52,12 +52,13 @@ bool calculateIK(ik_service::PoseIK::Request &req, ik_service::PoseIK::Response 
         res.joint_solutions[i].joint_angles[3] = q_sols[i][3];
         res.joint_solutions[i].joint_angles[4] = q_sols[i][4];
         res.joint_solutions[i].joint_angles[5] = q_sols[i][5];
-        
+        res.success = true; 
         }
 
     } else {
         ROS_INFO("There's no solution");
         res.num_solutions = 0; // No solution
+        res.success = false;
     }
     return true;
 }
@@ -65,7 +66,7 @@ bool calculateIK(ik_service::PoseIK::Request &req, ik_service::PoseIK::Response 
 int main(int argc, char **argv) {
     ros::init(argc, argv, "ik_service");
     ros::NodeHandle n;
-
+    
     ros::ServiceServer service = n.advertiseService("calculate_ik", calculateIK);
     ROS_INFO("Service ready ");
     ros::spin();
