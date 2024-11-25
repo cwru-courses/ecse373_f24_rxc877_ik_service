@@ -33,14 +33,24 @@ int main(int argc, char **argv) {
     
     // Defining the pose initial 
     geometry_msgs::Pose pose1;
-    pose1.position.x = 0.5;
+    pose1.position.x = 0.75;
     pose1.position.y = 0.0;
-    pose1.position.z = 0.5;
+    pose1.position.z = 0.0;
+
+    pose1.orientation.x = 0.0;
+    pose1.orientation.y = 0.0;
+    pose1.orientation.z = 0.0;
+    pose1.orientation.w = 1.0;
 
     geometry_msgs::Pose pose2;
     pose2.position.x = 0.5;
     pose2.position.y = 0.5;
     pose2.position.z = 0.5;
+
+    pose2.orientation.x = 0.0;
+    pose2.orientation.y = 0.0;
+    pose2.orientation.z = 0.0;
+    pose2.orientation.w = 1.0;
 
     //calling the service
     callIKService(client, pose1);
